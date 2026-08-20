@@ -6,10 +6,18 @@
 
 import type { Locale } from "../config"
 import { clipInContent } from "./clip-in-extensions-guide"
+import { balayageExtensionsSalonGuideContent } from "./balayage-extensions-salon-guide"
+import { fringesBangsExtensionsGuideContent } from "./fringes-bangs-extensions-guide"
+import { hairExtensionsTradeAccountContent } from "./hair-extensions-trade-account"
+import { manchesterColourCollection2026Content } from "./manchester-colour-collection-2026"
 
 // slug -> localized content (all 6 locales)
 export const blogContents: Record<string, Record<Locale, any>> = {
   "clip-in-extensions-guide": clipInContent,
+  "balayage-extensions-salon-guide": balayageExtensionsSalonGuideContent,
+  "fringes-bangs-extensions-guide": fringesBangsExtensionsGuideContent,
+  "hair-extensions-trade-account": hairExtensionsTradeAccountContent,
+  "manchester-colour-collection-2026": manchesterColourCollection2026Content,
 }
 
 export function getBlogContent(slug: string, locale: Locale): any | undefined {
