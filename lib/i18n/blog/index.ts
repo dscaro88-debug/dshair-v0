@@ -10,6 +10,12 @@ import { balayageExtensionsSalonGuideContent } from "./balayage-extensions-salon
 import { fringesBangsExtensionsGuideContent } from "./fringes-bangs-extensions-guide"
 import { hairExtensionsTradeAccountContent } from "./hair-extensions-trade-account"
 import { manchesterColourCollection2026Content } from "./manchester-colour-collection-2026"
+import { bestExtensionsFineHairUkContent } from "./best-extensions-fine-hair-uk"
+import { butterflyExtensionsGuideContent } from "./butterfly-extensions-guide"
+import { clientStoryPrivateLabelBrandContent } from "./client-story-private-label-brand"
+import { clientStorySalonGrowthChainContent } from "./client-story-salon-growth-chain"
+import { clientStoryStylistToFounderContent } from "./client-story-stylist-to-founder"
+import { salonClientRetentionRebookingGuideContent } from "./salon-client-retention-rebooking-guide"
 
 // slug -> localized content (all 6 locales)
 export const blogContents: Record<string, Record<Locale, any>> = {
@@ -18,6 +24,12 @@ export const blogContents: Record<string, Record<Locale, any>> = {
   "fringes-bangs-extensions-guide": fringesBangsExtensionsGuideContent,
   "hair-extensions-trade-account": hairExtensionsTradeAccountContent,
   "manchester-colour-collection-2026": manchesterColourCollection2026Content,
+  "best-extensions-fine-hair-uk": bestExtensionsFineHairUkContent,
+  "butterfly-extensions-guide": butterflyExtensionsGuideContent,
+  "client-story-private-label-brand": clientStoryPrivateLabelBrandContent,
+  "client-story-salon-growth-chain": clientStorySalonGrowthChainContent,
+  "client-story-stylist-to-founder": clientStoryStylistToFounderContent,
+  "salon-client-retention-rebooking-guide": salonClientRetentionRebookingGuideContent,
 }
 
 export function getBlogContent(slug: string, locale: Locale): any | undefined {
