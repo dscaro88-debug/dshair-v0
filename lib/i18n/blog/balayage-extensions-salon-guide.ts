@@ -379,7 +379,7 @@ const fr: BalayageExtensionsSalonGuideContent = {
   failItems: [
     "La couleur de l'extension paraît plate et artificielle à côté de la chevelure multi-tonale naturelle",
     "La zone racine de l'extension est souvent visiblement plus foncée que les racines méchées de la cliente — créant une ligne de démarcation dure",
-    'Les clientes rapportent fréquemment que leurs extensions ont un air « perruque » — une perception due entièrement à l'écart de couleur et non à la qualité du cheveu',
+    'Les clientes rapportent fréquemment que leurs extensions ont un air « perruque » — une perception due entièrement à l\'écart de couleur et non à la qualité du cheveu',
     "Pour compenser, vous devrez peut-être recolorer les extensions en salon — ajoutant 45–90 minutes de fauteuil, £30–70 de coûts de couleur, et un risque chimique qui peut dégrader la cuticule avant même que la cliente ne les porte",
   ],
   failP2:

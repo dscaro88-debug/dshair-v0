@@ -49,6 +49,42 @@ export async function POST(request: Request) {
     }
     // ──────────────────────────────────────────────────────────────────────
 
+    // ── Push inquiry to Buyer Agent intake webhook (awaited, bounded timeout) ──
+    const agentWebhookUrl = process.env.AGENT_INTAKE_WEBHOOK_URL;
+    if (agentWebhookUrl) {
+      const rawText = [
+        `Name: ${firstName || ''} ${lastName || ''}`.trim(),
+        `Email: ${email || ''}`,
+        phone ? `Phone/WhatsApp: ${phone}` : '',
+        subject ? `Subject: ${subject}` : '',
+        orderNumber ? `Order Number: ${orderNumber}` : '',
+        message ? `Message: ${message}` : '',
+      ].filter(Boolean).join('\n');
+
+      try {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 8000);
+        await fetch(agentWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(process.env.AGENT_WEBHOOK_SECRET ? { 'X-Webhook-Secret': process.env.AGENT_WEBHOOK_SECRET } : {}),
+          },
+          body: JSON.stringify({
+            project: 'dshairbeauty',
+            channel: 'website-form',
+            raw_text: rawText,
+          }),
+          signal: ctrl.signal,
+        });
+        clearTimeout(timer);
+      } catch (err) {
+        // Agent intake slow/unreachable — don't break the user-facing response
+        console.error('[Agent intake webhook] failed:', err);
+      }
+    }
+    // ─────────────────────────────────────────────────────────────────
+
     // Check if RESEND_API_KEY is configured
     if (!process.env.RESEND_API_KEY) {
       // For demo: just log and return success without sending email

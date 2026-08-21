@@ -493,7 +493,7 @@ const pl: ClientStoryStylistToFounderContent = {
     [
       { t: "Przez " },
       { t: "19 lat", b: true },
-      { t: " dostarczania technikom extensions obserwowaliśmy cichy wzorzec: najlepsi technicy nie zostają technikami. Ci, którzy dokumentują swoją metodę, budują bazę klientek ufającą ich nazwisku i kładą to nazwisko na linii produktów, przestają być „stylistką zakładającą extensions" i stają się marką. To jedna z takich ścieżek, udostępniona anonimowo." },
+      { t: " dostarczania technikom extensions obserwowaliśmy cichy wzorzec: najlepsi technicy nie zostają technikami. Ci, którzy dokumentują swoją metodę, budują bazę klientek ufającą ich nazwisku i kładą to nazwisko na linii produktów, przestają być „stylistką zakładającą extensions” i stają się marką. To jedna z takich ścieżek, udostępniona anonimowo." },
     ],
     [
       { t: "Jeśli jesteś freelanceową lub wynajmującą fotel stylistką czytającą to: ta historia nie jest o szczęściu. Jest o trzech ruchach, wykonanych po kolei, które może zrobić każda uzdolniona techniczka." },

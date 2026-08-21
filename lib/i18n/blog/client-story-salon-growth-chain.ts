@@ -508,7 +508,7 @@ const pl: ClientStorySalonGrowthChainContent = {
     [
       { t: "Przez " },
       { t: "19 lat", b: true },
-      { t: " dostarczania i wspierania salonów w UK najczęstsze pytanie właścicieli to nie „jaki włos mam kupić\" — lecz „jak naprawdę rosnąć?" Widzieliśmy setki salonów próbujących. Garstka buduje coś trwałego. To historia jednego z nich, opowiedziana za ich zgodą, ale zanonimizowana: salon z Leeds, który poznaliśmy, gdy był jednym fotelem w dzielonym pomieszczeniu." },
+      { t: " dostarczania i wspierania salonów w UK najczęstsze pytanie właścicieli to nie „jaki włos mam kupić\" — lecz „jak naprawdę rosnąć”? Widzieliśmy setki salonów próbujących. Garstka buduje coś trwałego. To historia jednego z nich, opowiedziana za ich zgodą, ale zanonimizowana: salon z Leeds, który poznaliśmy, gdy był jednym fotelem w dzielonym pomieszczeniu." },
     ],
     [
       { t: "Dzielimy ją, bo dźwignie, które rozwinęły ten biznes, nie są tajemnicą. To te same, które może pociągnąć każdy salon — spójne włosy, udokumentowana usługa, przeszkolony zespół i marka, do której klientki wracają po nazwisku." },
