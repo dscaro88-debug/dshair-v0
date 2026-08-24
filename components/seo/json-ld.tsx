@@ -344,11 +344,17 @@ export function ProductJsonLd({ product, aggregateRating, reviews }: ProductJson
       // Google Merchant Listings require both return-policy and shipping
       // references on every Offer. Inline the policy/service objects with
       // a URL pointer so the schema validates without extra round-trips.
+      // Required fields (per Google Merchant Listings spec):
+      //   returnPolicyCategory + applicableCountry on the return policy,
+      //   shippingRate on shippingDetails — all three were previously
+      //   missing, causing Search Console "merchant listing" errors.
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
         name: 'D.S Hair & Beauty 30-Day Return Policy',
         url: `${BASE_URL}/returns`,
         merchantReturnDays: 30,
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        applicableCountry: 'GB',
         returnMethod: 'https://schema.org/ReturnByMail',
         returnFees: 'https://schema.org/FreeReturn',
       },
@@ -356,6 +362,11 @@ export function ProductJsonLd({ product, aggregateRating, reviews }: ProductJson
         '@type': 'OfferShippingDetails',
         name: 'UK Standard Delivery',
         url: `${BASE_URL}/shipping`,
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: 0,
+          currency: 'GBP',
+        },
         shippingDestination: {
           '@type': 'DefinedRegion',
           addressCountry: 'GB',
