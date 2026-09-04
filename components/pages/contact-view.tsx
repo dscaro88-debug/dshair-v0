@@ -15,7 +15,7 @@ import type { ContactContent } from "@/lib/i18n/pages/contact"
 const WA_HREF =
   "https://wa.me/8613516946001?text=Hi%20D.S%20HAIR%20%26%20BEAUTY!%20I%27m%20interested%20in%20wholesale%20hair%20extensions%20for%20my%20salon."
 const WA_SALON_HREF =
-  "https://wa.me/8613516946001?text=Hi%20D.S%20HAIR%20%26%20BEAUTY!%20I%27m%20a%20salon%20owner%20in%20Manchester%20and%20I%27m%20interested%20in%20your%20wholesale%20hair%20extension%20supply."
+  "https://wa.me/8613516946001?text=Hi%20D.S%20HAIR%20%26%20BEAUTY!%20I%27m%20a%20salon%20owner%20interested%20in%20your%20wholesale%20hair%20extension%20supply."
 const MAIL_HREF = "mailto:caro@dshairbeauty.co.uk"
 
 const cardIcons = [MessageCircle, Mail, MapPin, Clock]
