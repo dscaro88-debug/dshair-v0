@@ -11,7 +11,7 @@ import {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, phone, subject, orderNumber, message, turnstileToken, submitTime } = body;
+    const { firstName, lastName, email, phone, subject, orderNumber, message, leadType, turnstileToken, submitTime } = body;
 
     // Validate required fields
     if (!email || !message) {
@@ -57,6 +57,7 @@ export async function POST(request: Request) {
         `Email: ${email || ''}`,
         phone ? `Phone/WhatsApp: ${phone}` : '',
         subject ? `Subject: ${subject}` : '',
+        leadType ? `Lead Type: ${leadType}` : '',
         orderNumber ? `Order Number: ${orderNumber}` : '',
         message ? `Message: ${message}` : '',
       ].filter(Boolean).join('\n');
@@ -101,13 +102,14 @@ export async function POST(request: Request) {
     const data = await resend.emails.send({
       from: 'D.S HAIR & BEAUTY <onboarding@resend.dev>',
       to: ['caro@dshairbeauty.co.uk'],
-      subject: `New Contact Form Submission: ${subject || 'General Enquiry'}`,
+      subject: `New Contact [${leadType === 'salon' ? 'SALON' : leadType === 'wholesaler' ? 'WHOLESALE' : leadType === 'individual' ? 'RETAIL' : 'GENERAL'}]: ${subject || 'General Enquiry'}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
         <p><strong>Subject:</strong> ${subject || 'General Enquiry'}</p>
+        <p><strong>Lead Type:</strong> ${leadType || 'Not provided'}</p>
         <p><strong>Order Number:</strong> ${orderNumber || 'Not provided'}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>

@@ -12,6 +12,9 @@ export interface ContactFormLabels {
   phonePh: string
   subject: string
   subjectPh: string
+  leadType: string
+  leadTypePh: string
+  leadTypes: { value: string; label: string }[]
   orderNumber: string
   orderNumberPh: string
   message: string
@@ -47,6 +50,13 @@ export const contactFormLabels: Record<Locale, ContactFormLabels> = {
     phonePh: "+44 123 456 7890",
     subject: "Subject",
     subjectPh: "Select a subject",
+    leadType: "I am a",
+    leadTypePh: "Select your type",
+    leadTypes: [
+      { value: "salon", label: "Salon / Hair Professional" },
+      { value: "wholesaler", label: "Wholesaler / Reseller" },
+      { value: "individual", label: "Individual / Personal use" },
+    ],
     orderNumber: "Order Number (Optional)",
     orderNumberPh: "e.g. DS-12345",
     message: "Message",
@@ -78,6 +88,13 @@ export const contactFormLabels: Record<Locale, ContactFormLabels> = {
     phonePh: "+49 123 456 7890",
     subject: "Betreff",
     subjectPh: "Betreff auswählen",
+    leadType: "Ich bin",
+    leadTypePh: "Typ auswählen",
+    leadTypes: [
+      { value: "salon", label: "Salon / Friseurprofi" },
+      { value: "wholesaler", label: "Großhändler / Wiederverkäufer" },
+      { value: "individual", label: "Privat / Private Nutzung" },
+    ],
     orderNumber: "Bestellnummer (optional)",
     orderNumberPh: "z. B. DS-12345",
     message: "Nachricht",
@@ -109,6 +126,13 @@ export const contactFormLabels: Record<Locale, ContactFormLabels> = {
     phonePh: "+33 1 23 45 67 89",
     subject: "Sujet",
     subjectPh: "Choisir un sujet",
+    leadType: "Je suis",
+    leadTypePh: "Sélectionnez votre type",
+    leadTypes: [
+      { value: "salon", label: "Salon / Professionnel capillaire" },
+      { value: "wholesaler", label: "Grossiste / Revendeur" },
+      { value: "individual", label: "Particulier / Usage personnel" },
+    ],
     orderNumber: "Numéro de commande (facultatif)",
     orderNumberPh: "ex. DS-12345",
     message: "Message",
@@ -140,6 +164,13 @@ export const contactFormLabels: Record<Locale, ContactFormLabels> = {
     phonePh: "+44 123 456 7890",
     subject: "الموضوع",
     subjectPh: "اختر موضوعاً",
+    leadType: "أنا",
+    leadTypePh: "اختر نوعك",
+    leadTypes: [
+      { value: "salon", label: "صالون / محترف شعر" },
+      { value: "wholesaler", label: "موزع / إعادة بيع" },
+      { value: "individual", label: "فرد / استخدام شخصي" },
+    ],
     orderNumber: "رقم الطلب (اختياري)",
     orderNumberPh: "مثال DS-12345",
     message: "الرسالة",
@@ -171,6 +202,13 @@ export const contactFormLabels: Record<Locale, ContactFormLabels> = {
     phonePh: "+46 123 456 789",
     subject: "Ämne",
     subjectPh: "Välj ett ämne",
+    leadType: "Jag är",
+    leadTypePh: "Välj typ",
+    leadTypes: [
+      { value: "salon", label: "Salong / Hårfrisör" },
+      { value: "wholesaler", label: "Grossist / Återförsäljare" },
+      { value: "individual", label: "Privat / Personligt bruk" },
+    ],
     orderNumber: "Ordernummer (valfritt)",
     orderNumberPh: "t.ex. DS-12345",
     message: "Meddelande",
@@ -202,6 +240,13 @@ export const contactFormLabels: Record<Locale, ContactFormLabels> = {
     phonePh: "+48 123 456 789",
     subject: "Temat",
     subjectPh: "Wybierz temat",
+    leadType: "Jestem",
+    leadTypePh: "Wybierz typ",
+    leadTypes: [
+      { value: "salon", label: "Salon / Profesjonalista" },
+      { value: "wholesaler", label: "Hurtownik / Odsprzedawca" },
+      { value: "individual", label: "Osoba prywatna / Użytek osobisty" },
+    ],
     orderNumber: "Numer zamówienia (opcjonalnie)",
     orderNumberPh: "np. DS-12345",
     message: "Wiadomość",

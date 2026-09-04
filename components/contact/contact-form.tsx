@@ -37,6 +37,7 @@ export function ContactForm({ labels }: { labels?: ContactFormLabels }) {
       subject: formData.get("subject"),
       orderNumber: formData.get("order-number"),
       message: formData.get("message"),
+      leadType: formData.get("lead-type"),
       turnstileToken: turnstileToken.current,
       submitTime: formMountedAt.current,
     }
@@ -121,6 +122,22 @@ export function ContactForm({ labels }: { labels?: ContactFormLabels }) {
               {t.subjects.map((subject) => (
                 <SelectItem key={subject.value} value={subject.value}>
                   {subject.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </Field>
+
+        <Field>
+          <FieldLabel htmlFor="lead-type">{t.leadType}</FieldLabel>
+          <Select required name="lead-type">
+            <SelectTrigger id="lead-type">
+              <SelectValue placeholder={t.leadTypePh} />
+            </SelectTrigger>
+            <SelectContent>
+              {t.leadTypes.map((lt) => (
+                <SelectItem key={lt.value} value={lt.value}>
+                  {lt.label}
                 </SelectItem>
               ))}
             </SelectContent>
