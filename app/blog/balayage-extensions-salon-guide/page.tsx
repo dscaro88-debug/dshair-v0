@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { BalayageExtensionsSalonGuideView } from "@/components/blog/balayage-view"
 import { balayageExtensionsSalonGuideContent } from "@/lib/i18n/blog/balayage-extensions-salon-guide"
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { SalonSuppliesView } from "@/components/salon/salon-supplies-view"
 
 export const metadata: Metadata = {

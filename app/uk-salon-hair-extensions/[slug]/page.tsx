@@ -57,6 +57,14 @@ export default async function SalonSeoPage({ params }: PageProps) {
 
   const pageUrl = `${BASE_URL}/uk-salon-hair-extensions/${page.slug}`
 
+  // City-specific WhatsApp CTA — turns local search intent into a direct conversation.
+  const cityName = page.slug.startsWith("hair-extension-supplier-")
+    ? page.slug.replace("hair-extension-supplier-", "").replace(/^\w/, (c) => c.toUpperCase())
+    : page.title
+  const waHref = `https://wa.me/8613516946001?text=${encodeURIComponent(
+    `Hi! I run a salon in ${cityName} and I'd like your wholesale hair extension trade pricing.`
+  )}`
+
   return (
     <CartProvider>
       <div className="flex min-h-screen flex-col bg-background">
@@ -78,17 +86,10 @@ export default async function SalonSeoPage({ params }: PageProps) {
                   name: "D.S Hair Beauty",
                   url: BASE_URL,
                 },
-                mainEntity: page.faqs.map((faq) => ({
-                  "@type": "Question",
-                  name: faq.question,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: faq.answer,
-                  },
-                })),
-              }),
             }}
           />
+
+          <FaqJsonLd faqs={page.faqs} />
 
           <section className="bg-[#4A1942] text-white">
             <div className="container px-4 md:px-6 py-16 md:py-24">
@@ -107,7 +108,7 @@ export default async function SalonSeoPage({ params }: PageProps) {
                     </Link>
                   </Button>
                   <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                    <Link href="/contact">Talk to the Team</Link>
+                    <a href={waHref} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
                   </Button>
                 </div>
               </div>

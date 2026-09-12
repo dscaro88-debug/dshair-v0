@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ContactView } from "@/components/pages/contact-view"
 import { contactContent } from "@/lib/i18n/pages/contact"
 
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.dshairbeauty.co.uk/contact",
+    languages: hreflangAlternates("/contact"),
   },
   openGraph: {
     title: contactContent.en.metaTitle,

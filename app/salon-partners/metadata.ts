@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflangAlternates } from "@/lib/i18n/config"
 
 export const metadata: Metadata = {
   title: 'Salon Partners Program | Wholesale Hair Extensions UK | D.S HAIR & BEAUTY',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: 'https://www.dshairbeauty.co.uk/salon-partners',
+    languages: hreflangAlternates("/salon-partners"),
   },
   openGraph: {
     title: 'Salon Partners Program | D.S HAIR & BEAUTY',

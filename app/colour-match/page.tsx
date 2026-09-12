@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ColourMatchView } from "@/components/pages/colour-match-view"
 import { getColourMatchContent } from "@/lib/i18n/pages/colour-match"
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     "Can't decide? Upload a photo or send us a WhatsApp message — our colour specialists will match your perfect human hair extension shade in under 2 hours.",
   alternates: {
     canonical: "https://www.dshairbeauty.co.uk/colour-match",
+    languages: hreflangAlternates("/colour-match"),
   },
   openGraph: {
     title: "Colour Match Service | D.S Hair & Beauty",

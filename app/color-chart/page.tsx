@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ColorChartView } from "@/components/pages/color-chart-view"
 import { getColorChartContent } from "@/lib/i18n/pages/color-chart"
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   keywords: ["hair extension colour chart", "hair extension shades", "extension colour match", "human hair colour chart UK"],
   alternates: {
     canonical: "https://www.dshairbeauty.co.uk/color-chart",
+    languages: hreflangAlternates("/color-chart"),
   },
   openGraph: {
     title: "Hair Extension Colour Chart | 31 Shades | D.S HAIR & BEAUTY",

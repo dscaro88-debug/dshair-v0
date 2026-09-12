@@ -16,6 +16,7 @@ import {
 import Image from "next/image"
 import { tradeWholesaleContent, type TradeWholesaleContent } from "@/lib/i18n/pages/trade-wholesale"
 import { HoneypotField, TurnstileField } from "@/components/antispam/spam-fields"
+import { FaqJsonLd } from "@/components/seo/json-ld"
 
 const WA_HREF =
   "https://wa.me/8613516946001?text=Hi!%20I%27m%20a%20salon%20owner%20in%20the%20UK.%20I%27d%20like%20to%20open%20a%20trade%20account%20for%20wholesale%20hair%20extensions."
@@ -24,6 +25,12 @@ export default function TradeWholesaleClient({ content }: { content: TradeWholes
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const t = content.form
+  // Fall back to English copy for the B2B booster sections on non-English locales.
+  const en = tradeWholesaleContent.en
+  const sampleProgram = content.sampleProgram ?? en.sampleProgram
+  const pricing = content.pricing ?? en.pricing
+  const cases = content.cases ?? en.cases
+  const faq = content.faq ?? en.faq
   const turnstileToken = useRef("")
   const formMountedAt = useRef(Date.now())
 
@@ -224,6 +231,93 @@ export default function TradeWholesaleClient({ content }: { content: TradeWholes
                 })}
               </div>
             </div>
+          </section>
+
+          {/* Sample Program */}
+          <section className="py-16 md:py-24 bg-secondary">
+            <div className="container px-4 md:px-6">
+              <div className="text-center mb-12">
+                <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4">{sampleProgram.title}</h2>
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{sampleProgram.subtitle}</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+                {sampleProgram.items.map((it) => (
+                  <div key={it.title} className="bg-card rounded-xl p-6 border">
+                    <h3 className="font-semibold text-lg mb-2 text-primary">{it.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{it.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center">
+                <Button size="lg" asChild>
+                  <a href="#open-account">{sampleProgram.ctaLabel}</a>
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Trade Pricing Tiers */}
+          <section className="py-16 md:py-24">
+            <div className="container px-4 md:px-6">
+              <div className="text-center mb-12">
+                <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4">{pricing.title}</h2>
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{pricing.subtitle}</p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                {pricing.tiers.map((tier, i) => (
+                  <div
+                    key={tier.name}
+                    className={`rounded-xl p-6 border bg-card ${i === pricing.tiers.length - 1 ? "ring-2 ring-primary" : ""}`}
+                  >
+                    <div className="text-xs font-semibold uppercase tracking-wide text-primary mb-1">{tier.name}</div>
+                    <div className="text-2xl font-bold mb-1">{tier.volume}</div>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{tier.benefit}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-6 max-w-2xl mx-auto">{pricing.footnote}</p>
+            </div>
+          </section>
+
+          {/* Salon Case Studies */}
+          <section className="py-16 md:py-24 bg-secondary">
+            <div className="container px-4 md:px-6">
+              <div className="text-center mb-12">
+                <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4">{cases.title}</h2>
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{cases.subtitle}</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {cases.items.map((c) => (
+                  <figure key={c.salon + c.location} className="bg-card rounded-xl p-6 border flex flex-col">
+                    <div className="flex items-center justify-between mb-3">
+                      <figcaption className="font-semibold text-lg">{c.salon}</figcaption>
+                      <span className="text-xs font-medium bg-primary/10 text-primary rounded-full px-3 py-1">{c.tag}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground mb-3">{c.location}</p>
+                    <blockquote className="text-sm text-foreground/80 leading-relaxed italic mb-3">&ldquo;{c.quote}&rdquo;</blockquote>
+                    <p className="text-xs font-medium text-primary mt-auto">{c.metric}</p>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ (with FAQPage schema for GEO) */}
+          <section className="py-16 md:py-24">
+            <div className="container px-4 md:px-6">
+              <div className="text-center mb-12">
+                <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4">{faq.title}</h2>
+              </div>
+              <div className="max-w-3xl mx-auto space-y-4">
+                {faq.items.map((f) => (
+                  <div key={f.q} className="bg-card rounded-xl p-5 border">
+                    <p className="font-semibold text-primary mb-2">{f.q}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <FaqJsonLd faqs={faq.items.map((f) => ({ question: f.q, answer: f.a }))} />
           </section>
 
           {/* CTA / Contact Form */}

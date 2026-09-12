@@ -1,4 +1,5 @@
 import { Header } from "@/components/layout/header"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { BlogJsonLd } from "@/components/seo/blog-jsonld"
 import { Footer } from "@/components/layout/footer"
 import { CartDrawer } from "@/components/cart/cart-drawer"
@@ -32,6 +33,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://www.dshairbeauty.co.uk/blog/salon-retail-attachment-guide",
+    languages: hreflangAlternates("/blog/salon-retail-attachment-guide"),
   },
 }
 

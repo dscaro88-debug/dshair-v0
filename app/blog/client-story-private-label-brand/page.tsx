@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ClientStoryPrivateLabelBrandView } from "@/components/blog/client-story-private-label-brand-view"
 import { clientStoryPrivateLabelBrandContent } from "@/lib/i18n/blog/client-story-private-label-brand"
 

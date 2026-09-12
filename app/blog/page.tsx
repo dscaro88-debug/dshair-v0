@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { BlogListView } from "@/components/blog/blog-list-view"
 import { blogListContent } from "@/lib/i18n/blog/list"
 
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.dshairbeauty.co.uk/blog",
+    languages: hreflangAlternates("/blog"),
   },
   openGraph: {
     title: "Hair Extension Blog | B2B Trade Guides for UK Salons | DS Hair Beauty",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { SalonClientRetentionRebookingGuideView } from "@/components/blog/salon-client-retention-rebooking-guide-view"
 import { salonClientRetentionRebookingGuideContent } from "@/lib/i18n/blog/salon-client-retention-rebooking-guide"
 

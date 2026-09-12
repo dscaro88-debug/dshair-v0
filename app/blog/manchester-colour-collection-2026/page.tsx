@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ManchesterColourCollection2026View } from "@/components/blog/manchester-colour-collection-2026-view"
 import { manchesterColourCollection2026Content } from "@/lib/i18n/blog/manchester-colour-collection-2026"
 

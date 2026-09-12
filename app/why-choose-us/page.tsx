@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld"
 import WhyChooseUsClient from "./why-choose-us-client"
 import { whyChooseUsContent } from "@/lib/i18n/pages/why-choose-us"
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.dshairbeauty.co.uk/why-choose-us",
+    languages: hreflangAlternates("/why-choose-us"),
   },
   openGraph: {
     title: whyChooseUsContent.en.metaTitle,

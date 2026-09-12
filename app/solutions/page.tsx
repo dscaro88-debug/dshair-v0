@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld"
 import { SolutionsView } from "@/components/pages/solutions-view"
 import { getSolutionsContent } from "@/lib/i18n/pages/solutions"
-import { SITE_URL } from "@/lib/i18n/config"
+import { SITE_URL, hreflangAlternates } from "@/lib/i18n/config"
 
 const c = getSolutionsContent("en")
 
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description: c.metaDescription,
   alternates: {
     canonical: `${SITE_URL}/solutions`,
+    languages: hreflangAlternates("/solutions"),
   },
   openGraph: {
     title: c.metaTitle,

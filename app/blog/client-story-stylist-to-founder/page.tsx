@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ClientStoryStylistToFounderView } from "@/components/blog/client-story-stylist-to-founder-view"
 import { clientStoryStylistToFounderContent } from "@/lib/i18n/blog/client-story-stylist-to-founder"
 

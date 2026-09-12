@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Star, Heart } from "lucide-react"
+import { Heart } from "lucide-react"
 import { getHomeContent } from "@/lib/i18n/home"
 import { localeHref } from "@/lib/i18n/routing"
 import type { Locale } from "@/lib/i18n/config"
@@ -62,23 +62,6 @@ export function FeaturedProducts({ locale }: { locale: Locale }) {
               </div>
 
               <div className="space-y-1">
-                <div className="flex items-center gap-1">
-                  <span className="text-sm font-medium">{product.rating}</span>
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-3 h-3 ${
-                          i < Math.floor(product.rating)
-                            ? "text-amber-400 fill-amber-400"
-                            : "text-gray-300"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xs text-muted-foreground">({product.reviews})</span>
-                </div>
-
                 <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                   {product.name}
                 </h3>

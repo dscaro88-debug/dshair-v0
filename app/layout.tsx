@@ -58,7 +58,10 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   verification: {
-    google: 'dshairbeauty-co-uk',  // GSC verification — update with actual meta tag value from Search Console
+    // Real GSC meta-tag value must be set as GOOGLE_SITE_VERIFICATION in Vercel
+    // env vars. Falls back to a placeholder until then (Search Console won't verify
+    // ownership while this is still the placeholder).
+    google: process.env.GOOGLE_SITE_VERIFICATION || 'dshairbeauty-co-uk',
   },
   robots: {
     index: true,

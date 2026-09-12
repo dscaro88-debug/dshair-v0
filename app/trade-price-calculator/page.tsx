@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld"
 import { TradePriceCalculatorView } from "@/components/pages/trade-price-calculator-view"
 import { getTradeCalcContent } from "@/lib/i18n/pages/trade-price-calculator"
-import { SITE_URL } from "@/lib/i18n/config"
+import { SITE_URL, hreflangAlternates } from "@/lib/i18n/config"
 
 const c = getTradeCalcContent("en")
 const path = "/trade-price-calculator"
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description: c.metaDescription,
   alternates: {
     canonical: `${SITE_URL}${path}`,
+    languages: hreflangAlternates("/trade-price-calculator"),
   },
   openGraph: {
     title: c.metaTitle,

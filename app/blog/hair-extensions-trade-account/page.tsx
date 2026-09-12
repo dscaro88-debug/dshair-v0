@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { HairExtensionsTradeAccountView } from "@/components/blog/hair-extensions-trade-account-view"
 import { hairExtensionsTradeAccountContent } from "@/lib/i18n/blog/hair-extensions-trade-account"
 

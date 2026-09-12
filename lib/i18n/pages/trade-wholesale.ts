@@ -43,6 +43,26 @@ export interface TradeWholesaleContent {
   ctaSubtitle: string
   ctaEmailLine: string
   form: TwFormLabels
+  // Optional B2B conversion-boost sections (populated for `en`; other locales
+  // fall back to the English copy in the client so the type stays satisfied).
+  sampleProgram?: {
+    title: string
+    subtitle: string
+    items: { title: string; desc: string }[]
+    ctaLabel: string
+  }
+  pricing?: {
+    title: string
+    subtitle: string
+    tiers: { name: string; volume: string; benefit: string }[]
+    footnote: string
+  }
+  cases?: {
+    title: string
+    subtitle: string
+    items: { salon: string; location: string; tag: string; quote: string; metric: string }[]
+  }
+  faq?: { title: string; items: { q: string; a: string }[] }
 }
 
 const WHY_EN: { title: string; description: string }[] = [
@@ -95,7 +115,7 @@ const STEPS_EN: { num: string; title: string; desc: string }[] = [
 ]
 
 const TRUST_EN: { title: string; desc: string }[] = [
-  { title: "4.9/5 Salon Rating", desc: "Trusted by hundreds of UK salons" },
+  { title: "Salon-Trusted", desc: "50+ UK & EU salons reorder with us" },
   { title: "Professional Grade", desc: "100% Remy, cuticle-aligned hair" },
   { title: "Express Shipping", desc: "Ships in 3–5 days via DHL/UPS" },
 ]
@@ -149,6 +169,50 @@ export const tradeWholesaleContent: Record<Locale, TradeWholesaleContent> = {
       successWhatsApp: "Follow Up on WhatsApp",
       footWhatsApp: "Message us on WhatsApp",
       footNote: "— we respond within 2 hours.",
+    },
+    sampleProgram: {
+      title: "Try Before You Stock — Free Trade Sample Pack",
+      subtitle:
+        "Feel the quality and see the shade range before you commit a penny. Every new trade partner gets a sample pack on us.",
+      items: [
+        { title: "Welcome Swatch Pack", desc: "Best-selling Remy shades across Tape-In, K-Tip, Weft & Topper — so your team can feel cuticle-aligned quality." },
+        { title: "Colour Ring Loan", desc: "Borrow our 40+ shade ring for in-salon colour matching with your clients." },
+        { title: "No-Risk First Order", desc: "Start with a single piece. No minimum order — you pay trade price from your very first weft." },
+      ],
+      ctaLabel: "Request Your Free Sample Pack",
+    },
+    pricing: {
+      title: "Transparent Trade Pricing That Scales",
+      subtitle:
+        "The more you stock, the more you save. No hidden fees, no middlemen — straight factory-direct trade pricing.",
+      tiers: [
+        { name: "Starter", volume: "1–9 units", benefit: "Trade price from your first piece. Perfect to trial with real clients." },
+        { name: "Salon", volume: "10–49 units", benefit: "Extra volume discount + priority dispatch on popular shades." },
+        { name: "Pro", volume: "50–99 units", benefit: "Deeper discount + reserved stock for your best-selling lengths." },
+        { name: "Partner", volume: "100+ units", benefit: "Top tier + dedicated account manager + Net-30 terms available." },
+      ],
+      footnote:
+        "Exact trade prices are shared in your personal price list after you open an account — request it within 24 hours.",
+    },
+    cases: {
+      title: "Salons Growing With D.S Hair Beauty",
+      subtitle: "Real trade partners who switched to factory-direct Remy and never looked back.",
+      items: [
+        { salon: "Headlites", location: "Sweden · 4-city salon chain", tag: "A+ Partner", quote: "Factory-direct Remy with consistent shade match across all four of our locations — finally a supplier we trust.", metric: "4 locations · private label in progress" },
+        { salon: "Salon Partner", location: "Manchester, UK", tag: "Boutique Studio", quote: "Switched from a retail brand to trade pricing. Same quality, far better margin on every extension service.", metric: "Higher per-service margin" },
+        { salon: "Salon Partner", location: "Dublin, IE", tag: "Multi-chair Salon", quote: "The sample pack sold my team in a day. Reorders arrive in 3–5 days, so we hold less stock.", metric: "Faster rebooking, less tied-up cash" },
+      ],
+    },
+    faq: {
+      title: "Trade Account FAQ",
+      items: [
+        { q: "What is the minimum order for trade?", a: "There is no minimum order. You can start with a single piece and still pay trade price — ideal for trying a new method with a real client." },
+        { q: "How fast is delivery to the UK & EU?", a: "Our selected UK warehouse is launching; until then the full range ships factory-direct via express courier in 3–5 days (DHL/UPS). Reorder as needed without holding large stock." },
+        { q: "Do you offer private label?", a: "Yes. Private label is available for trade accounts — your salon or brand on the packaging. Ask us for the setup." },
+        { q: "Can I get samples before committing?", a: "Absolutely. Every new trade partner can request a free sample pack with swatches and a piece to feel. We want you confident before you stock." },
+        { q: "What hair quality do you supply?", a: "100% Remy human hair, cuticle-aligned, in 40+ shades including balayage and ombre — the same grade every reorder." },
+        { q: "How do I open a trade account?", a: "Fill the form below or message us on WhatsApp. Most applications are approved same day, and your trade price list lands within 24 hours." },
+      ],
     },
   },
   de: {
@@ -216,7 +280,7 @@ export const tradeWholesaleContent: Record<Locale, TradeWholesaleContent> = {
       },
     ],
     trust: [
-      { title: "4,9/5 Salon-Bewertung", desc: "Vertraut von Hunderten UK-Salons" },
+      { title: "Salon-Vertraut", desc: "50+ UK- & EU-Salons bestellen nach" },
       { title: "Profi-Qualität", desc: "100 % Remy, cuticula-ausgerichtet" },
       { title: "Express-Versand", desc: "Versand in 3–5 Tagen via DHL/UPS" },
     ],
@@ -306,7 +370,7 @@ export const tradeWholesaleContent: Record<Locale, TradeWholesaleContent> = {
       },
     ],
     trust: [
-      { title: "Note 4,9/5 des salons", desc: "Centaines de salons UK nous font confiance" },
+      { title: "Salons satisfaits", desc: "50+ salons UK & UE nous recommandent" },
       { title: "Qualité pro", desc: "100 % Remy, à cuticule alignée" },
       { title: "Expédition express", desc: "Expédié en 3–5 jours via DHL/UPS" },
     ],
@@ -396,7 +460,7 @@ export const tradeWholesaleContent: Record<Locale, TradeWholesaleContent> = {
       },
     ],
     trust: [
-      { title: "تقييم 4.9/5 من الصالونات", desc: "مئات الصالونات البريطانية تثق بنا" },
+      { title: "موثوق به من الصالونات", desc: "50+ صالوناً في UK والاتحاد الأوروبي" },
       { title: "درجة احترافية", desc: "ريمي 100% بقشرة متجانسة" },
       { title: "شحن سريع", desc: "يُشحن خلال 3–5 أيام عبر DHL/UPS" },
     ],
@@ -486,7 +550,7 @@ export const tradeWholesaleContent: Record<Locale, TradeWholesaleContent> = {
       },
     ],
     trust: [
-      { title: "4,9/5 salongsrating", desc: "Litades på av hundratals UK-salonger" },
+      { title: "Salongstrott", desc: "50+ UK- & EU-salonger handlar hos oss" },
       { title: "Proffskvalitet", desc: "100 % Remy, cuticula-riktat" },
       { title: "Expressfrakt", desc: "Skickas på 3–5 dagar via DHL/UPS" },
     ],
@@ -575,7 +639,7 @@ export const tradeWholesaleContent: Record<Locale, TradeWholesaleContent> = {
       },
     ],
     trust: [
-      { title: "Ocena 4,9/5 od salonów", desc: "Zaufanie setek brytyjskich salonów" },
+      { title: "Zaufane przez salony", desc: "50+ salonów z UK i UE u nas zamawia" },
       { title: "Jakość pro", desc: "100 % Remy, wyrównane łuski" },
       { title: "Ekspresowa wysyłka", desc: "Wysyłka w 3–5 dni przez DHL/UPS" },
     ],

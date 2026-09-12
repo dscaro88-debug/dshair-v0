@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ButterflyExtensionsGuideView } from "@/components/blog/butterfly-extensions-guide-view"
 import { butterflyExtensionsGuideContent } from "@/lib/i18n/blog/butterfly-extensions-guide"
 

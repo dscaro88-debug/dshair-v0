@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { FringesBangsExtensionsGuideView } from "@/components/blog/fringes-bangs-extensions-guide-view"
 import { fringesBangsExtensionsGuideContent } from "@/lib/i18n/blog/fringes-bangs-extensions-guide"
 

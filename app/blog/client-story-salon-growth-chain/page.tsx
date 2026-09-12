@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ClientStorySalonGrowthChainView } from "@/components/blog/client-story-salon-growth-chain-view"
 import { clientStorySalonGrowthChainContent } from "@/lib/i18n/blog/client-story-salon-growth-chain"
 

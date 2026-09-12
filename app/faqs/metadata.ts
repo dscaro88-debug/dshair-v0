@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflangAlternates } from "@/lib/i18n/config"
 
 export const metadata: Metadata = {
   title: 'Hair Extension FAQs | Expert Guide | D.S HAIR & BEAUTY',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: 'https://www.dshairbeauty.co.uk/faqs',
+    languages: hreflangAlternates("/faqs"),
   },
   openGraph: {
     title: 'Hair Extension FAQs | Expert Guide | D.S HAIR & BEAUTY',

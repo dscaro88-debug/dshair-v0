@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { ClipInExtensionsGuideView } from "@/components/blog/clip-in-view"
 import { clipInContent } from "@/lib/i18n/blog/clip-in-extensions-guide"
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld"
 import { FAQsClient } from "./faqs-client"
 import { faqsContent, getFaqsContent } from "@/lib/i18n/pages/faqs"
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.dshairbeauty.co.uk/faqs",
+    languages: hreflangAlternates("/faqs"),
   },
   openGraph: {
     title: faqsContent.en.metaTitle,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { hreflangAlternates } from "@/lib/i18n/config"
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld"
 import ShippingClient from "./shipping-client"
 import { shippingContent, getShippingContent } from "@/lib/i18n/pages/shipping"
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.dshairbeauty.co.uk/shipping",
+    languages: hreflangAlternates("/shipping"),
   },
   openGraph: {
     title: shippingContent.en.metaTitle,
